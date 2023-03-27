@@ -33,7 +33,7 @@ connection.connect((err) => {
   });*/
 
   app.post('/pendientes', (req, res)=>{
-    connection.query("INSERT INTO tasks(description) VALUES('hola es una prueba')");
+    connection.query(`INSERT INTO tasks(description) VALUES('${req.body.description}')`);
     res.send('insertado');
   })
 
